@@ -32,11 +32,11 @@ describe './lib/tic_tac_toe.rb' do
 
         output = capture_puts{ game.display_board }
 
-        expect(output).to include(" X | X | X ")
+        expect(output).to include("X | X | X ")
         expect(output).to include("-----------")
-        expect(output).to include(" X | O | O ")
+        expect(output).to include("X | O | O ")
         expect(output).to include("-----------")
-        expect(output).to include(" X | O | O ")
+        expect(output).to include("X | O | O ")
 
 
         board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]

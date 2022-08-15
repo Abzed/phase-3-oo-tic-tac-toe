@@ -1,3 +1,5 @@
+require "pry"
+
 class TicTacToe
     WIN_COMBINATIONS = [
         [0,1,2],
@@ -16,7 +18,7 @@ class TicTacToe
     end
 
     def display_board
-        board.each_slice(3).map { |row| row.join(" | ") }.join("\n" + "-"*11 + "\n")
+        print board.each_slice(3).map { |row| row.join(" | ") }.join("\n" + "-"*11 + "\n")
     end
 
     def input_to_index(user_input)
@@ -28,7 +30,7 @@ class TicTacToe
         board
     end
 
-    def position_taken?(index)
+    def position_taken?(board, index)
         if (board[index] == " ") || (board[index] == "") || (board[index] == nil)
            return false 
         else
@@ -36,7 +38,7 @@ class TicTacToe
         end
     end
 
-    def valid_move?(index)
+    def valid_move?(board, index)
         if index.between?(0,8) && !position_taken?(board, index)
            return true
         end
@@ -68,3 +70,7 @@ class TicTacToe
     end
     
 end
+
+game = TicTacToe.new
+
+binding.pry
